@@ -174,6 +174,7 @@ public class CommandParser {
     VimPlugin.getHistory().addEntry(HistoryGroup.COMMAND, cmd);
 
     // Parse the command
+    // Try ArrayDeque<ExCommand> and have parse() return an ArrayDeque<ExCommand>, use an iterator
     final ExCommand command = parse(cmd);
     final CommandHandler handler = getCommandHandler(command);
 
